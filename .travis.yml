@@ -1,8 +1,8 @@
 # Install the apt prerequisites
-addons:
-  apt:
-    packages:
-      - python-pygments
+# addons:
+#   apt:
+#     packages:
+#       - python-pygments
 
 # Clean and don't fail
 install:

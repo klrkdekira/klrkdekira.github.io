@@ -1,7 +1,7 @@
 ---
 title: "對自己的誠實"
 date: 2018-01-03T19:02:49+08:00
-draft: false
+draft: true
 ---
 
 不用欺騙自己

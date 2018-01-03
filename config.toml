@@ -1,0 +1,55 @@
+baseurl = "https://klrkdekira.github.io/"
+languageCode = "en-us"
+Title = "Offload"
+# Copyright notice. This is displayer in the footer.
+copyright = "&copy; CC-BY-SA 4.0"
+theme = "hugo_theme_pickles"
+
+[params]
+  paginate = 10
+  # Social accounts. Link to these accounts are displayed in the header and
+  # footer
+  twitter = "tztzel"
+  facebook = "tztzel"
+  github = "klrkdekira"
+  youtube = "klrk"
+  linkedin = "chowcheeleong"
+  author = "Chee Leong"
+  authorwebsite = ""
+  avatar = "https://en.gravatar.com/userimage/33169461/8efc7f12b0a7a143af0ab4a721f9dbe8?size=200"
+  bio = "Sentient Keyboard Smasher 突然明白自己活着，不過智慧究竟是甚麼意思"
+  # Short subtitle/tagline. This is displayed in the header.
+  subtitle = "Essays"
+  # Logo image. This is displayed ogp image.
+  # logo = "favicon.ico"
+  favicon = "favicon.ico"
+
+[[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    weight = 4
+
+[related]
+  # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
+  threshold = 80
+
+  # To get stable "See also" sections we, by default, exclude newer related pages.
+  includeNewer = false
+
+  # Will lower case keywords in both queries and in the indexes.
+  toLower = false
+
+  [[related.indices]]
+  name = "keywords"
+  weight = 150
+  [[related.indices]]
+  name  = "author"
+  toLower = true
+  weight = 30
+  [[related.indices]]
+  name  = "tags"
+  weight = 100
+  [[related.indices]]
+  name  = "date"
+  weight = 10
+  pattern = "2017"

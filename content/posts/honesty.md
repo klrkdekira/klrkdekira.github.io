@@ -1,5 +1,5 @@
 ---
-title: "面對自己，憤怒版"
+title: "面對自己"
 date: 2018-01-03T19:02:49+08:00
 draft: true
 ---
@@ -33,7 +33,11 @@ draft: true
 
 憤怒慾望滿足
 
-## 推薦
+### 後語
+
+心理不平衡的那部分拆了在[這裡](/posts/wind/)。
+
+### 推薦
 
 - [原來人類在得益這方面也不是很有邏輯。](https://www.booklife.com.tw/club_rwd/talk_detail.php?get=did-933)
 

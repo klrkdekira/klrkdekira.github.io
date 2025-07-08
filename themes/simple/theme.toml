@@ -1,0 +1,21 @@
+name = "Simple"
+description = "Clean theme. Projects, affiliations, social links. Works."
+homepage = "https://github.com/klrkdekira/simple-theme"
+tags = ["minimal", "portfolio", "tailwindcss", "flowbite"]
+features = [
+    "Project cards",
+    "Organization affiliations",
+    "Social links",
+    "Dark mode",
+    "Responsive",
+]
+min_version = "0.41.0"
+
+[author]
+name = "Chee Leong"
+homepage = "https://cheeleong.dev"
+
+[original]
+name = "Simple"
+homepage = "https://github.com/klrkdekira/simple-theme"
+repo = "https://github.com/klrkdekira/simple-theme"

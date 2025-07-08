@@ -1,0 +1,44 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Your Name'
+theme = 'simple'
+
+[params]
+description = "Software engineer. Here are my projects."
+# avatar = "/images/avatar.jpg"  # Uncomment and add your avatar image
+footer = "Built with Hugo"
+
+# Social media links
+[[params.social]]
+name = "github"
+title = "GitHub"
+url = "https://github.com/yourusername"
+
+[[params.social]]
+name = "email"
+title = "Contact"
+url = "mailto:your.email@example.com"
+
+# Projects
+[[params.projects]]
+title = "Web Service"
+description = "HTTP API for data processing. Handles 10k+ requests per day with 99.9% uptime."
+url = "https://your-service.com"
+github = "https://github.com/yourusername/web-service"
+tech = ["Go", "PostgreSQL", "Docker"]
+status = "active"
+
+[[params.projects]]
+title = "CLI Tool"
+description = "Command-line utility for file processing. Reduces manual work by 80%."
+github = "https://github.com/yourusername/cli-tool"
+tech = ["Python", "Click"]
+status = "completed"
+
+[[params.projects]]
+title = "Dashboard"
+description = "Real-time monitoring interface. Built for operations team."
+url = "https://dashboard.example.com"
+github = "https://github.com/yourusername/dashboard"
+tech = ["React", "Node.js", "WebSocket"]
+status = "active"

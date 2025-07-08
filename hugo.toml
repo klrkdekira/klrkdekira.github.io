@@ -1,0 +1,58 @@
+baseURL = 'https://cheeleong.dev/'
+languageCode = 'en-us'
+title = 'Chee Leong'
+theme = 'simple'
+
+[params]
+description = "Software engineer. Here are my projects."
+# avatar = "/images/avatar.jpg"  # Uncomment and add your avatar image
+footer = "Built with Hugo"
+
+# Social media links - customize these with your actual profiles
+[[params.social]]
+name = "github"
+title = "GitHub"
+url = "https://github.com/klrkdekira"
+
+[[params.social]]
+name = "linkedin"
+title = "LinkedIn"
+url = "https://www.linkedin.com/in/cheeleong/"
+
+[[params.social]]
+name = "discord"
+title = "Discord"
+url = "https://discordapp.com/users/duskvol"
+
+# Communities
+[[params.communities]]
+title = "EngineersMY"
+description = "A platform for Malaysian engineers to connect and share their knowledge."
+logo = "/images/emy.png"
+url = "https://engineers.my"
+github = "https://github.com/engineersmy/engineersmy"
+youtube = "https://www.youtube.com/@EngineersMY"
+
+[[params.communities]]
+title = "DevKami"
+description = "A platform for Malaysian developers to connect and share their knowledge."
+logo = "/images/devkami.png"
+url = "https://devkami.com"
+github = "https://github.com/devxkami"
+youtube = "https://www.youtube.com/@devkamiftw"
+
+[[params.communities]]
+title = "GolangMY"
+description = "A platform for Malaysian Golang developers to connect and share their knowledge."
+logo = "/images/golangmy.png"
+url = "https://golang.my"
+github = "https://github.com/golang-my"
+telegram = "https://t.me/golangmalaysia"
+
+# Projects
+[[params.projects]]
+title = "Troika! System JSON"
+description = "JSON schemas and data objects for Troika! RPG based on the official System Reference Document (SRD)"
+url = "https://troika-system-json.cheeleong.dev"
+github = "https://github.com/klrkdekira/troika-system-json"
+tech = ["JSON", "JSON Schema"]

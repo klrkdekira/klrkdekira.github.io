@@ -4,7 +4,7 @@ title = 'Chee Leong'
 theme = 'simple'
 
 [params]
-description = "Software engineer. Here are my projects."
+description = "Software engineer."
 # avatar = "/images/avatar.jpg"  # Uncomment and add your avatar image
 footer = "Built with Hugo"
 

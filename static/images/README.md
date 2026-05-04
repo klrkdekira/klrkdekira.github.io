@@ -1,5 +1,11 @@
 # Images Directory
 
+## Attributions
+
+| File | Author | Source | License |
+|------|--------|--------|---------|
+| `bg.jpg` | Hana Mara | https://unsplash.com/photos/a-cat-sitting-in-front-of-a-computer-monitor-KrYbarbAx5s | [Unsplash License](https://unsplash.com/license) |
+
 This directory should contain the logo images referenced in your `hugo.toml` configuration.
 
 ## Required Logo Files

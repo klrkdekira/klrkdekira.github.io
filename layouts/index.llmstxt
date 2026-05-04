@@ -1,0 +1,32 @@
+# {{ .Site.Title }}
+
+> {{ .Site.Params.description }}
+
+{{ with .Content }}{{ . | plainify | strings.TrimSpace }}
+
+{{ end -}}
+{{- $pages := where .Site.RegularPages "Sitemap.Disable" "ne" true -}}
+{{- if $pages }}
+## Pages
+
+{{ range $pages }}- [{{ .Title }}]({{ .Permalink }}): {{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | strings.TrimSpace }}{{ end }}{{ end }}
+{{ end }}
+{{- end -}}
+{{- if .Site.Params.projects }}
+## Projects
+
+{{ range .Site.Params.projects }}- [{{ .title }}]({{ .url }}){{ with .description }}: {{ . }}{{ end }}{{ with .github }} — [Source]({{ . }}){{ end }}
+{{ end }}
+{{- end -}}
+{{- if .Site.Params.communities }}
+## Communities
+
+{{ range .Site.Params.communities }}- [{{ .title }}]({{ .url }}){{ with .description }}: {{ . }}{{ end }}
+{{ end }}
+{{- end -}}
+{{- if .Site.Params.social }}
+## Optional
+
+{{ range .Site.Params.social }}- [{{ .title }}]({{ .url }})
+{{ end }}
+{{- end -}}

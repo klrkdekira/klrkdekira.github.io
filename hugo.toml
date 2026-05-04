@@ -3,6 +3,20 @@ locale = 'en-us'
 title = 'Chee Leong'
 theme = 'simple'
 
+[mediaTypes]
+[mediaTypes."text/plain"]
+suffixes = ["txt"]
+
+[outputFormats]
+[outputFormats.llmstxt]
+mediaType = "text/plain"
+baseName = "llms"
+isPlainText = true
+notAlternative = true
+
+[outputs]
+home = ["HTML", "RSS", "llmstxt"]
+
 [params]
 description = "Software engineer."
 # avatar = "/images/avatar.jpg"  # Uncomment and add your avatar image

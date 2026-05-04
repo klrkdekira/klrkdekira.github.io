@@ -30,19 +30,24 @@
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
     <meta property="og:locale" content="en_US">
+    {{/* OG image: "A cat sitting in front of a computer monitor" by Hana Mara, Unsplash
+         https://unsplash.com/photos/a-cat-sitting-in-front-of-a-computer-monitor-KrYbarbAx5s
+         License: https://unsplash.com/license */}}
+    <meta property="og:image" content="{{ .Site.BaseURL }}images/bg.jpg">
+    <meta property="og:image:alt" content="Photo by Hana Mara on Unsplash">
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@cheeleong_dev">
     <meta name="twitter:creator" content="@cheeleong_dev">
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}images/bg.jpg">
+    <meta name="twitter:image:alt" content="Photo by Hana Mara on Unsplash">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.svg">
 
     <script>
-        const _t = localStorage.getItem('theme') ||
-                   (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        if (_t === 'dark') document.documentElement.classList.add('dark');
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark');
     </script>
     <script src="{{ "js/tailwind.js" | relURL }}"></script>
     <script type="application/ld+json">
@@ -85,9 +90,9 @@
     {{ end }}
     </script>
 
-    <script type="text/tailwindcss">
-        @variant dark (&:where(.dark, .dark *));
-    </script>
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+    </style>
 
     <style>
         .content h2 { font-size: 0.875rem; font-weight: 600; color: #374151; margin-bottom: 0.5rem; }
@@ -118,8 +123,7 @@
 
     <script>
         function toggleDarkMode() {
-            const isDark = document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark');
         }
 
         document.addEventListener('DOMContentLoaded', function() {

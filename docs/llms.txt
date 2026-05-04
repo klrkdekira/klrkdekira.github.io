@@ -1,0 +1,22 @@
+# Chee Leong
+
+> Software engineer.
+
+Work I build softwares.
+
+
+## Projects
+
+- [Troika! System JSON](https://troika-system-json.cheeleong.dev): JSON schemas and data objects for Troika! RPG based on the official System Reference Document (SRD) — [Source](https://github.com/klrkdekira/troika-system-json)
+
+## Communities
+
+- [EngineersMY](https://engineers.my): A platform for Malaysian engineers to connect and share their knowledge.
+- [DevKami](https://devkami.com): A platform for Malaysian developers to connect and share their knowledge.
+- [GolangMY](https://golang.my): A platform for Malaysian Golang developers to connect and share their knowledge.
+
+## Optional
+
+- [GitHub](https://github.com/klrkdekira)
+- [LinkedIn](https://www.linkedin.com/in/chowcheeleong/)
+- [Discord](https://discordapp.com/users/duskvol)

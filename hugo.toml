@@ -19,7 +19,6 @@ home = ["HTML", "RSS", "llmstxt"]
 
 [params]
 description = "Software engineer."
-# avatar = "/images/avatar.jpg"  # Uncomment and add your avatar image
 footer = "Built with Hugo"
 
 # Social media links - customize these with your actual profiles

@@ -9,7 +9,7 @@
           {{ .Site.Title }}
         </h1>
         {{ if .Site.Params.description }}
-        <p class="text-sm text-gray-500 dark:text-gray-400">
+        <p class="text-sm text-gray-600 dark:text-gray-400">
           {{ .Site.Params.description }}
         </p>
         {{ end }}
@@ -35,7 +35,7 @@
     </div>
 
     {{ with .Content }}
-    <div class="content mt-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+    <div class="content mt-6 text-base text-gray-700 dark:text-gray-300 leading-7">
       {{ . }}
     </div>
     {{ end }}

@@ -1,6 +1,18 @@
 {{ define "main" }}
 <main id="main-content" class="max-w-2xl mx-auto px-6 py-16">
 
+  {{/* Cover: "A cat sitting in front of a computer monitor" by Hana Mara, Unsplash
+       https://unsplash.com/photos/a-cat-sitting-in-front-of-a-computer-monitor-KrYbarbAx5s */}}
+  <img
+    src="{{ "images/banner.jpg" | relURL }}"
+    alt=""
+    width="1600"
+    height="534"
+    fetchpriority="high"
+    decoding="async"
+    class="w-full h-auto rounded-lg mb-10 dark:brightness-90"
+  >
+
   <!-- Header -->
   <header class="mb-14">
     <div class="flex items-start justify-between">

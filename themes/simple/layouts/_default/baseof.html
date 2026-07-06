@@ -34,6 +34,8 @@
          https://unsplash.com/photos/a-cat-sitting-in-front-of-a-computer-monitor-KrYbarbAx5s
          License: https://unsplash.com/license */}}
     <meta property="og:image" content="{{ .Site.BaseURL }}images/bg.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="800">
     <meta property="og:image:alt" content="Photo by Hana Mara on Unsplash">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -41,6 +43,10 @@
     <meta name="twitter:creator" content="@cheeleong_dev">
     <meta name="twitter:image" content="{{ .Site.BaseURL }}images/bg.jpg">
     <meta name="twitter:image:alt" content="Photo by Hana Mara on Unsplash">
+
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#030712" media="(prefers-color-scheme: dark)">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/favicon.svg">
@@ -108,12 +114,17 @@
 
     <script>
         function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
+            const dark = document.documentElement.classList.toggle('dark');
+            const toggle = document.querySelector('[data-theme-toggle]');
+            if (toggle) toggle.setAttribute('aria-pressed', dark);
         }
 
         document.addEventListener('DOMContentLoaded', function() {
             const toggle = document.querySelector('[data-theme-toggle]');
-            if (toggle) toggle.addEventListener('click', toggleDarkMode);
+            if (toggle) {
+                toggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
+                toggle.addEventListener('click', toggleDarkMode);
+            }
         });
     </script>
 </body>

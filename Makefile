@@ -1,10 +1,12 @@
 all: build
 
 css:
-	pnpm dlx @tailwindcss/cli@4 -i assets/css/main.css -o assets/css/tailwind.css --minify
+	pnpm run build:css
 
 build: css
+	@if [ ! -f static/CNAME ] && [ -f CNAME ]; then cp CNAME static/CNAME; fi
 	go tool hugo build --gc --minify --noBuildLock -d docs
+	@test -f docs/CNAME || cp static/CNAME docs/CNAME
 
 serve: css
 	go tool hugo server --noBuildLock

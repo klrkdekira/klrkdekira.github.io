@@ -1,10 +1,10 @@
 name = "Simple"
-description = "Clean theme. Projects, affiliations, social links. Works."
+description = "Clean portfolio theme for projects, communities, and social links."
 homepage = "https://github.com/klrkdekira/simple-theme"
-tags = ["minimal", "portfolio", "tailwindcss", "flowbite"]
+tags = ["minimal", "portfolio", "tailwindcss", "accessible"]
 features = [
     "Project cards",
-    "Organization affiliations",
+    "Community cards",
     "Social links",
     "Dark mode",
     "Responsive",

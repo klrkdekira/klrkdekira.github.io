@@ -22,8 +22,13 @@ notAlternative = true
 home = ["HTML", "RSS", "llmstxt"]
 
 [params]
-description = "Software engineer."
+authorName = "Chee Leong"
+description = "Software engineer in Malaysia building developer tools, structured data, and technical communities."
 footer = "Built with Hugo"
+jobTitle = "Software Engineer"
+location = "Malaysia"
+socialImage = "/images/bg.jpg"
+socialImageAlt = "A cat sitting in front of a computer monitor"
 
 # Social media links - customize these with your actual profiles
 [[params.social]]
@@ -47,7 +52,7 @@ title = "EngineersMY"
 description = "A platform for Malaysian engineers to connect and share their knowledge."
 logo = "/images/emy.png"
 url = "https://engineers.my"
-github = "https://github.com/engineersmy/engineersmy"
+github = "https://github.com/engineersmy"
 youtube = "https://www.youtube.com/@EngineersMY"
 
 [[params.communities]]
@@ -69,7 +74,9 @@ telegram = "https://t.me/golangmalaysia"
 # Projects
 [[params.projects]]
 title = "Troika! System JSON"
-description = "JSON schemas and data objects for Troika! RPG based on the official System Reference Document (SRD)"
+description = "Machine-readable JSON, JSON-LD, and validation schemas for the Troika! tabletop RPG System Reference Document."
 url = "https://cheeleong.dev/troika-system-json"
 github = "https://github.com/klrkdekira/troika-system-json"
-tech = ["JSON", "JSON Schema"]
+status = "Active"
+highlight = "Includes an aggregated data bundle, validation schemas, and 36 character backgrounds."
+tech = ["JSON", "JSON Schema", "JSON-LD", "Python"]

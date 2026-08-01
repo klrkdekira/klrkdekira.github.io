@@ -1,13 +1,13 @@
 # Chee Leong
 
-> Software engineer.
+> Software engineer in Malaysia building developer tools, structured data, and technical communities.
 
-Work I build softwares.
+Work I am a software engineer in Malaysia building developer tools, structured data, and technical communities. I focus on practical systems that make information easier to validate, reuse, and share.
 
 
 ## Projects
 
-- [Troika! System JSON](https://cheeleong.dev/troika-system-json): JSON schemas and data objects for Troika! RPG based on the official System Reference Document (SRD) — [Source](https://github.com/klrkdekira/troika-system-json)
+- [Troika! System JSON](https://cheeleong.dev/troika-system-json): Machine-readable JSON, JSON-LD, and validation schemas for the Troika! tabletop RPG System Reference Document. — [Source](https://github.com/klrkdekira/troika-system-json)
 
 ## Communities
 

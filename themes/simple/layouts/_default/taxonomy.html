@@ -3,7 +3,7 @@
 
   <!-- Top bar -->
   <div class="flex items-start justify-between mb-12">
-    <a href="{{ "/" | relURL }}" class="text-sm text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+    <a href="{{ "/" | relURL }}" class="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
       &larr; {{ .Site.Title }}
     </a>
     {{ partial "theme-toggle.html" . }}
@@ -34,18 +34,18 @@
     <li>
       <a href="{{ .Page.Permalink }}" class="inline-flex items-baseline gap-1.5 text-sm font-mono text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-900 px-2 py-1 rounded hover:text-gray-900 dark:hover:text-white transition-colors">
         {{ .Page.Title }}
-        <span class="text-xs text-gray-400 dark:text-gray-500 tabular-nums">{{ .Count }}</span>
+        <span class="text-xs text-gray-500 dark:text-gray-400 tabular-nums">{{ .Count }}</span>
       </a>
     </li>
     {{ end }}
   </ul>
   {{ else }}
-  <p class="text-sm text-gray-400 dark:text-gray-500">Nothing here yet.</p>
+  <p class="text-sm text-gray-500 dark:text-gray-400">Nothing here yet.</p>
   {{ end }}
 
   <!-- Footer -->
   <footer class="mt-16 pt-8 border-t border-gray-100 dark:border-gray-800">
-    <p class="text-xs text-gray-400 dark:text-gray-600">
+    <p class="text-xs text-gray-500 dark:text-gray-400">
       {{ if .Site.Params.footer }}{{ .Site.Params.footer }}{{ else }}{{ now.Format "2006" }} &mdash; {{ .Site.Title }}{{ end }}
     </p>
   </footer>

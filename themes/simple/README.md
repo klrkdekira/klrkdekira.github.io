@@ -1,117 +1,34 @@
 # Simple Hugo Theme
 
-Simple theme. No fluff. For my own use.
-
-A minimal Hugo theme for displaying projects and contact information. Built with Tailwind CSS and enhanced with Flowbite components.
+A compact portfolio theme maintained as part of cheeleong.dev.
 
 ## Features
 
-- **Modern Design**: Clean, professional layout with subtle animations
-- **Flowbite Integration**: Enhanced UI components with improved accessibility
-- **Responsive Layout**: Mobile-first design that works on all devices
-- **Dark Mode Toggle**: Smooth transitions between light and dark themes
-- **Project Showcase**: Beautiful cards with status indicators and tech stacks
-- **Affiliations Showcase**: Organization cards with multiple social links
-- **Enhanced Social Links**: Professional buttons with hover effects and tooltips
-- **Performance Optimized**: Vendored dependencies for fast loading
-- **Accessibility**: ARIA labels, focus states, and screen reader support
-
-## Supported Social Media Platforms
-
-- **GitHub**: Code repositories and contributions
-- **LinkedIn**: Professional networking
-- **Discord**: Community engagement
-- **Email**: Direct contact
-- **Website**: Personal or professional sites
-- **Generic Links**: Any other platforms
-
-## Enhanced Components
-
-### Status Badges
-
-Projects support color-coded status indicators:
-
-- `active`: Green badge for ongoing projects
-- `completed`: Blue badge for finished projects
-- `in-progress`: Yellow badge for work in progress
-- Custom statuses with gray styling
-
-### Flowbite Features
-
-- **Cards**: Enhanced with hover animations and gradients
-- **Buttons**: Professional styling with focus states
-- **Tooltips**: Contextual information on hover
-- **Typography**: Improved readability and hierarchy
-- **Animations**: Smooth transitions and micro-interactions
+- Responsive homepage, list, article, taxonomy, term, and 404 layouts
+- Project and community cards configured through Hugo parameters
+- Light and dark themes with a persisted user preference
+- Self-hosted Inter font and fingerprinted Tailwind CSS
+- Keyboard focus styles, skip navigation, and semantic page structure
+- Canonical, Open Graph, Twitter card, RSS, and JSON-LD metadata
 
 ## Configuration
 
-The theme supports the following parameters in your `hugo.toml`:
-
-### Basic Settings
+Site identity belongs in the root `hugo.toml`:
 
 ```toml
 [params]
-description = "Software engineer. Here are my projects."
-footer = "Built with Hugo"
-# avatar = "/images/avatar.jpg"  # Optional profile image
+authorName = "Your Name"
+description = "A concise description."
+jobTitle = "Software Engineer"
+location = "Malaysia"
+socialImage = "/images/social.jpg"
+socialImageAlt = "A meaningful description of the social image"
 ```
 
-### Social Media Links
+Projects support `title`, `description`, `highlight`, `url`, `github`, `status`, and `tech`. Communities support `title`, `description`, `logo`, `url`, `github`, `youtube`, and `telegram`.
 
-```toml
-[[params.social]]
-name = "github"
-title = "GitHub"
-url = "https://github.com/username"
+## Styles and scripts
 
-[[params.social]]
-name = "linkedin"
-title = "LinkedIn"
-url = "https://www.linkedin.com/in/username/"
+Tailwind scans `layouts/` and `themes/simple/layouts/`. Theme behavior is implemented with small inline scripts in `baseof.html`; there is no Flowbite or client-side framework dependency.
 
-[[params.social]]
-name = "discord"
-title = "Discord"
-url = "https://discordapp.com/users/username"
-```
-
-### Affiliations
-
-```toml
-[[params.affiliations]]
-title = "Organization Name"
-description = "Description of the organization and your involvement."
-logo = "/images/org-logo.png"
-url = "https://organization.com"
-github = "https://github.com/organization"
-youtube = "https://www.youtube.com/@organization"
-telegram = "https://t.me/organization"
-```
-
-### Projects with Enhanced Features
-
-```toml
-[[params.projects]]
-title = "Project Name"
-description = "Detailed description of the project and its impact."
-url = "https://project-demo.com"
-github = "https://github.com/username/project"
-tech = ["Go", "PostgreSQL", "Docker", "Kubernetes"]
-status = "active"  # active, completed, in-progress, or custom
-```
-
-## Technical Stack
-
-- **Hugo**: Static site generator
-- **Tailwind CSS**: Utility-first CSS framework
-- **Flowbite**: Professional UI components
-- **Vanilla JavaScript**: Enhanced interactivity
-- **Vendored Dependencies**: No external CDN dependencies
-
-## Performance
-
-- **Optimized Assets**: Locally hosted Flowbite and Tailwind
-- **Minimal JavaScript**: Only essential interactions
-- **Responsive Images**: Proper sizing and lazy loading
-- **Fast Loading**: Optimized for Core Web Vitals
+Use the root Makefile to develop and build the site.

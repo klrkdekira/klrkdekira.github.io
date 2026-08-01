@@ -1,0 +1,13 @@
+{
+  "name": "cheeleong-dev",
+  "private": true,
+  "packageManager": "pnpm@11.1.2",
+  "scripts": {
+    "build:css": "tailwindcss -i assets/css/main.css -o assets/css/tailwind.css --minify",
+    "check:html": "html-validate \"docs/**/*.html\""
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "html-validate": "11.6.0"
+  }
+}

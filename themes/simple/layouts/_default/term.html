@@ -3,7 +3,7 @@
 
   <!-- Top bar -->
   <div class="flex items-start justify-between mb-12">
-    <a href="{{ "/" | relURL }}" class="text-sm text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+    <a href="{{ "/" | relURL }}" class="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
       &larr; {{ .Site.Title }}
     </a>
     {{ partial "theme-toggle.html" . }}
@@ -35,7 +35,7 @@
           {{ .Title }}
         </span>
         {{ if not .Date.IsZero }}
-        <time datetime="{{ .Date.Format "2006-01-02" }}" class="shrink-0 text-sm tabular-nums text-gray-400 dark:text-gray-500">
+        <time datetime="{{ .Date.Format "2006-01-02" }}" class="shrink-0 text-sm tabular-nums text-gray-500 dark:text-gray-400">
           {{ .Date.Format "Jan 2, 2006" }}
         </time>
         {{ end }}
@@ -47,7 +47,7 @@
 
   <!-- Footer -->
   <footer class="mt-16 pt-8 border-t border-gray-100 dark:border-gray-800">
-    <p class="text-xs text-gray-400 dark:text-gray-600">
+    <p class="text-xs text-gray-500 dark:text-gray-400">
       {{ if .Site.Params.footer }}{{ .Site.Params.footer }}{{ else }}{{ now.Format "2006" }} &mdash; {{ .Site.Title }}{{ end }}
     </p>
   </footer>

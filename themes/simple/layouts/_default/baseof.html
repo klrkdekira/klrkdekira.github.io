@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Locale | default "en" }}" class="h-full">
 <head>
+    {{- $authorName := .Site.Params.authorName | default .Site.Title -}}
+    {{- $jobTitle := .Site.Params.jobTitle | default "Software Engineer" -}}
+    {{- $socialImage := .Site.Params.socialImage | default "/images/bg.jpg" -}}
+    {{- $socialImageAlt := .Site.Params.socialImageAlt | default "A cat sitting in front of a computer monitor" -}}
+    {{- $sameAs := slice -}}
+    {{- range .Site.Params.social -}}
+        {{- $sameAs = $sameAs | append .url -}}
+    {{- end -}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
@@ -33,16 +41,14 @@
     {{/* OG image: "A cat sitting in front of a computer monitor" by Hana Mara, Unsplash
          https://unsplash.com/photos/a-cat-sitting-in-front-of-a-computer-monitor-KrYbarbAx5s
          License: https://unsplash.com/license */}}
-    <meta property="og:image" content="{{ .Site.BaseURL }}images/bg.jpg">
+    <meta property="og:image" content="{{ $socialImage | absURL }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="800">
-    <meta property="og:image:alt" content="Photo by Hana Mara on Unsplash">
+    <meta property="og:image:alt" content="{{ $socialImageAlt }}">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@cheeleong_dev">
-    <meta name="twitter:creator" content="@cheeleong_dev">
-    <meta name="twitter:image" content="{{ .Site.BaseURL }}images/bg.jpg">
-    <meta name="twitter:image:alt" content="Photo by Hana Mara on Unsplash">
+    <meta name="twitter:image" content="{{ $socialImage | absURL }}">
+    <meta name="twitter:image:alt" content="{{ $socialImageAlt }}">
 
     <link rel="canonical" href="{{ .Permalink }}">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -63,21 +69,27 @@
     {{ end }}
 
     <script>
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark');
+        (() => {
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                const dark = savedTheme ? savedTheme === 'dark' : systemPrefersDark;
+                document.documentElement.classList.toggle('dark', dark);
+            } catch (_) {
+                document.documentElement.classList.toggle('dark', systemPrefersDark);
+            }
+        })();
     </script>
     <script type="application/ld+json">
     {{ if .IsHome }}
     {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Chee Leong",
-        "url": "https://cheeleong.dev",
-        "jobTitle": "Software Engineer",
-        "description": "{{ .Site.Params.description }}",
-        "sameAs": [
-            "https://github.com/klrkdekira",
-            "https://www.linkedin.com/in/chowcheeleong/"
-        ]
+        "name": {{ $authorName | jsonify }},
+        "url": {{ .Site.BaseURL | jsonify }},
+        "jobTitle": {{ $jobTitle | jsonify }},
+        "description": {{ .Site.Params.description | jsonify }},
+        "sameAs": {{ $sameAs | jsonify }}
     }
     {{ else }}
     {
@@ -87,8 +99,8 @@
         "description": {{ .Description | default .Site.Params.description | jsonify }},
         "author": {
             "@type": "Person",
-            "name": "Chee Leong",
-            "url": "https://cheeleong.dev"
+            "name": {{ $authorName | jsonify }},
+            "url": {{ .Site.BaseURL | jsonify }}
         },
         "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
         "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
@@ -98,8 +110,8 @@
         },
         "publisher": {
             "@type": "Person",
-            "name": "Chee Leong",
-            "url": "https://cheeleong.dev"
+            "name": {{ $authorName | jsonify }},
+            "url": {{ .Site.BaseURL | jsonify }}
         }
     }
     {{ end }}
@@ -113,16 +125,28 @@
     {{ block "main" . }}{{ end }}
 
     <script>
+        function syncThemeToggle(toggle) {
+            if (!toggle) return;
+            const dark = document.documentElement.classList.contains('dark');
+            toggle.setAttribute('aria-pressed', dark);
+            toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        }
+
         function toggleDarkMode() {
             const dark = document.documentElement.classList.toggle('dark');
             const toggle = document.querySelector('[data-theme-toggle]');
-            if (toggle) toggle.setAttribute('aria-pressed', dark);
+            try {
+                localStorage.setItem('theme', dark ? 'dark' : 'light');
+            } catch (_) {
+                // The selected theme still applies for the current page.
+            }
+            syncThemeToggle(toggle);
         }
 
         document.addEventListener('DOMContentLoaded', function() {
             const toggle = document.querySelector('[data-theme-toggle]');
             if (toggle) {
-                toggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
+                syncThemeToggle(toggle);
                 toggle.addEventListener('click', toggleDarkMode);
             }
         });

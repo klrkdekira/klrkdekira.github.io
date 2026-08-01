@@ -1,31 +1,19 @@
-# Images Directory
+# Image assets
 
-## Attributions
+Images in this directory are copied to `/images/` by Hugo.
 
-| File | Author | Source | License |
-|------|--------|--------|---------|
-| `bg.jpg` | Hana Mara | https://unsplash.com/photos/a-cat-sitting-in-front-of-a-computer-monitor-KrYbarbAx5s | [Unsplash License](https://unsplash.com/license) |
+## Current assets
 
-This directory should contain the logo images referenced in your `hugo.toml` configuration.
+| File | Purpose | Dimensions |
+| --- | --- | --- |
+| `banner.jpg` | Homepage banner | 1600×534 |
+| `bg.jpg` | Social sharing image | 1200×800 |
+| `emy.png` | EngineersMY logo | 64×64 |
+| `devkami.png` | DevKami logo | 64×64 |
+| `golangmy.png` | GolangMY logo | 64×64 |
 
-## Required Logo Files
+The community logos render at 32×32, so the 64×64 files provide a 2× source size. Keep replacements compressed and preserve the configured filenames.
 
-Based on your current configuration, you need to add these logo files:
+## Attribution
 
-- `engineersmy.png` - Logo for EngineersMY
-- `devkami.png` - Logo for DevKami
-- `golangmy.png` - Logo for GolangMY
-
-## Recommended Image Specifications
-
-- **Format**: PNG with transparency preferred
-- **Size**: 96x96 pixels (will be displayed at 48x48px with 2x DPI)
-- **File size**: Keep under 50KB for optimal loading performance
-
-## Adding Images
-
-1. Save your logo files in this directory (`static/images/`)
-2. Make sure the filenames match exactly what's specified in `hugo.toml`
-3. Test your site locally to ensure images display correctly
-
-The images will be automatically served at `/images/filename.png` when your site is built.
+`banner.jpg` and `bg.jpg` use “A cat sitting in front of a computer monitor” by Hana Mara, sourced from [Unsplash](https://unsplash.com/photos/a-cat-sitting-in-front-of-a-computer-monitor-KrYbarbAx5s) under the [Unsplash License](https://unsplash.com/license).

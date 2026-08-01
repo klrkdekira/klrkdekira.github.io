@@ -5,7 +5,7 @@
        https://unsplash.com/photos/a-cat-sitting-in-front-of-a-computer-monitor-KrYbarbAx5s */}}
   <img
     src="{{ "images/banner.jpg" | relURL }}"
-    alt=""
+    alt="{{ .Site.Params.socialImageAlt | default "A cat sitting in front of a computer monitor" }}"
     width="1600"
     height="534"
     fetchpriority="high"

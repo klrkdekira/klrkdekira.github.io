@@ -11,13 +11,18 @@
     {{- end -}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }} – {{ $jobTitle }}{{ with .Site.Params.location }} in {{ . }}{{ end }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 
     {{ if .Description }}
     <meta name="description" content="{{ .Description }}">
     {{ else if .Site.Params.description }}
     <meta name="description" content="{{ .Site.Params.description }}">
     {{ end }}
+
+    {{ if .Site.Params.keywords }}
+    <meta name="keywords" content="{{ delimit .Site.Params.keywords ", " }}">
+    {{ end }}
+    <meta name="robots" content="index, follow">
 
     {{- if not .IsHome -}}
     <meta property="og:title" content="{{ .Title }}">
@@ -30,7 +35,7 @@
     {{- end -}}
     {{- end -}}
     {{- else -}}
-    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:title" content="{{ .Site.Title }} – {{ $jobTitle }}{{ with .Site.Params.location }} in {{ . }}{{ end }}">
     <meta property="og:description" content="{{ .Site.Params.description }}">
     <meta property="og:type" content="website">
     {{- end -}}
@@ -47,6 +52,8 @@
     <meta property="og:image:alt" content="{{ $socialImageAlt }}">
 
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }} – {{ $jobTitle }}{{ with .Site.Params.location }} in {{ . }}{{ end }}{{ else }}{{ .Title }}{{ end }}">
+    <meta name="twitter:description" content="{{ .Description | default .Site.Params.description }}">
     <meta name="twitter:image" content="{{ $socialImage | absURL }}">
     <meta name="twitter:image:alt" content="{{ $socialImageAlt }}">
 
@@ -80,42 +87,20 @@
             }
         })();
     </script>
-    <script type="application/ld+json">
     {{ if .IsHome }}
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": {{ $authorName | jsonify }},
-        "url": {{ .Site.BaseURL | jsonify }},
-        "jobTitle": {{ $jobTitle | jsonify }},
-        "description": {{ .Site.Params.description | jsonify }},
-        "sameAs": {{ $sameAs | jsonify }}
-    }
-    {{ else }}
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": {{ .Title | jsonify }},
-        "description": {{ .Description | default .Site.Params.description | jsonify }},
-        "author": {
-            "@type": "Person",
-            "name": {{ $authorName | jsonify }},
-            "url": {{ .Site.BaseURL | jsonify }}
-        },
-        "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
-        "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "{{ .Permalink }}"
-        },
-        "publisher": {
-            "@type": "Person",
-            "name": {{ $authorName | jsonify }},
-            "url": {{ .Site.BaseURL | jsonify }}
-        }
-    }
-    {{ end }}
+    {{- $person := dict "@type" "Person" "@id" (printf "%s#person" .Site.BaseURL) "name" $authorName "url" .Site.BaseURL "jobTitle" $jobTitle "description" .Site.Params.description "homeLocation" (dict "@type" "Place" "name" (.Site.Params.location | default "Malaysia")) "sameAs" $sameAs "knowsAbout" (slice "Software Engineering" "Developer Tools" "Structured Data" "Go" "TypeScript" "JSON Schema" "JSON-LD" "Open Source") -}}
+    {{- $website := dict "@type" "WebSite" "@id" (printf "%s#website" .Site.BaseURL) "url" .Site.BaseURL "name" .Site.Title "description" .Site.Params.description "publisher" (dict "@id" (printf "%s#person" .Site.BaseURL)) "inLanguage" "en-US" -}}
+    {{- $profilePage := dict "@type" "ProfilePage" "@id" .Permalink "url" .Permalink "name" (printf "%s – %s" .Site.Title $jobTitle) "mainEntity" (dict "@id" (printf "%s#person" .Site.BaseURL)) -}}
+    {{- $schemaData := dict "@context" "https://schema.org" "@graph" (slice $person $website $profilePage) -}}
+    <script type="application/ld+json">
+    {{ $schemaData | jsonify | safeJS }}
     </script>
+    {{ else }}
+    {{- $schemaData := dict "@context" "https://schema.org" "@type" "BlogPosting" "headline" .Title "description" (.Description | default .Site.Params.description) "author" (dict "@type" "Person" "name" $authorName "url" .Site.BaseURL) "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00") "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink) "publisher" (dict "@type" "Person" "name" $authorName "url" .Site.BaseURL) -}}
+    <script type="application/ld+json">
+    {{ $schemaData | jsonify | safeJS }}
+    </script>
+    {{ end }}
 
 </head>
 <body class="h-full bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">

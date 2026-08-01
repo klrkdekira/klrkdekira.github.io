@@ -27,8 +27,19 @@ description = "Software engineer in Malaysia building developer tools, structure
 footer = "Built with Hugo"
 jobTitle = "Software Engineer"
 location = "Malaysia"
+keywords = [
+    "Chee Leong",
+    "Software Engineer",
+    "Malaysia",
+    "Developer Tools",
+    "Structured Data",
+    "EngineersMY",
+    "DevKami",
+    "GolangMY",
+]
 socialImage = "/images/bg.jpg"
 socialImageAlt = "A cat sitting in front of a computer monitor"
+
 
 # Social media links - customize these with your actual profiles
 [[params.social]]
@@ -80,3 +91,12 @@ github = "https://github.com/klrkdekira/troika-system-json"
 status = "Active"
 highlight = "Includes an aggregated data bundle, validation schemas, and 36 character backgrounds."
 tech = ["JSON", "JSON Schema", "JSON-LD", "Python"]
+
+[[params.projects]]
+title = "Troika! Character Generator"
+description = "A static, browser-based character generator using live data from Troika! System JSON."
+url = "https://cheeleong.dev/troika-generator/"
+github = "https://github.com/klrkdekira/troika-generator"
+status = "Active"
+highlight = "Fetches live game data and schemas at runtime to generate character sheets without storing a local data snapshot."
+tech = ["TypeScript", "React"]

@@ -1,3 +1,5 @@
+all: build
+
 css:
 	pnpm dlx @tailwindcss/cli@4 -i assets/css/main.css -o assets/css/tailwind.css --minify
 
@@ -12,4 +14,4 @@ update:
 	go mod tidy
 	go mod vendor
 
-.PHONY: css build serve update
+.PHONY: all css build serve update

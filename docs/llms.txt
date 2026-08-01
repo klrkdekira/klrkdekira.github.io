@@ -7,7 +7,7 @@ Work I build softwares.
 
 ## Projects
 
-- [Troika! System JSON](https://troika-system-json.cheeleong.dev): JSON schemas and data objects for Troika! RPG based on the official System Reference Document (SRD) — [Source](https://github.com/klrkdekira/troika-system-json)
+- [Troika! System JSON](https://cheeleong.dev/troika-system-json): JSON schemas and data objects for Troika! RPG based on the official System Reference Document (SRD) — [Source](https://github.com/klrkdekira/troika-system-json)
 
 ## Communities
 

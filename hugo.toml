@@ -86,7 +86,7 @@ telegram = "https://t.me/golangmalaysia"
 [[params.projects]]
 title = "Troika! System JSON"
 description = "Machine-readable JSON, JSON-LD, and validation schemas for the Troika! tabletop RPG System Reference Document."
-url = "https://cheeleong.dev/troika-system-json"
+url = "https://cheeleong.dev/troika-system-json/"
 github = "https://github.com/klrkdekira/troika-system-json"
 status = "Active"
 highlight = "Includes an aggregated data bundle, validation schemas, and 36 character backgrounds."
@@ -100,3 +100,11 @@ github = "https://github.com/klrkdekira/troika-generator"
 status = "Active"
 highlight = "Fetches live game data and schemas at runtime to generate character sheets without storing a local data snapshot."
 tech = ["TypeScript", "React"]
+
+[[params.projects]]
+title = "Worlds Without Number System JSON"
+description = "JSON schemas and data objects for Worlds Without Number based on the official System Reference Document (SRD)."
+url = "https://cheeleong.dev/wwn-system-json/"
+github = "https://github.com/klrkdekira/wwn-system-json"
+status = "Active"
+tech = ["JSON", "JSON Schema"]

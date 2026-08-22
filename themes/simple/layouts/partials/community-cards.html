@@ -1,58 +1,24 @@
 {{ range $community := .Site.Params.communities }}
-<div class="border border-gray-200 dark:border-gray-800 rounded-md p-4 hover:border-gray-300 dark:hover:border-gray-700 transition-colors">
-  <div class="flex items-start gap-3 mb-2">
-    {{ with $community.logo }}
-    <img
-      src="{{ . }}"
-      alt="{{ $community.title }} logo"
-      width="32"
-      height="32"
-      loading="lazy"
-      decoding="async"
-      class="w-8 h-8 rounded object-cover shrink-0 mt-0.5"
-    />
-    {{ end }}
-    <div class="min-w-0">
-      <h3 class="font-medium text-gray-900 dark:text-white text-[15px] mb-1">
-        {{ $community.title }}
-      </h3>
-      {{ with $community.description }}
-      <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-        {{ . }}
-      </p>
-      {{ end }}
-    </div>
+<article class="community-card">
+  {{ with $community.logo }}
+  <img
+    src="{{ . }}"
+    alt="{{ $community.title }} logo"
+    width="46"
+    height="46"
+    loading="lazy"
+    decoding="async"
+  >
+  {{ end }}
+  <div class="community-copy">
+    <h3>{{ $community.title }}</h3>
+    {{ with $community.description }}<p>{{ . }}</p>{{ end }}
+    <nav class="community-links" aria-label="{{ $community.title }} links">
+      {{ with $community.url }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">Website <span aria-hidden="true">↗</span></a>{{ end }}
+      {{ with $community.github }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>{{ end }}
+      {{ with $community.youtube }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">YouTube <span aria-hidden="true">↗</span></a>{{ end }}
+      {{ with $community.telegram }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a>{{ end }}
+    </nav>
   </div>
-
-  <div class="flex flex-wrap gap-4 {{ with $community.logo }}pl-11{{ end }}" role="navigation" aria-label="{{ $community.title }} links">
-    {{ with $community.url }}
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer"
-       aria-label="{{ $community.title }} website" class="inline-flex items-center text-[13px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-      <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-      <span>Website</span>
-    </a>
-    {{ end }}
-    {{ with $community.youtube }}
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer"
-       aria-label="{{ $community.title }} on YouTube" class="inline-flex items-center text-[13px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-      <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186c0 0-.39 2.33-.39 5.814 0 3.48.39 5.814.39 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 002.122-2.136c0 0 .39-2.33.39-5.814 0-3.48-.39-5.814-.39-5.814zM9.65 15.37V8.63L15.5 12l-5.85 3.37z"/></svg>
-      <span>YouTube</span>
-    </a>
-    {{ end }}
-    {{ with $community.telegram }}
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer"
-       aria-label="{{ $community.title }} on Telegram" class="inline-flex items-center text-[13px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-      <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.425c-.398 4.195-2.202 8.69-4.027 12.296a.671.671 0 01-1.073.065l-2.795-3.667-3.677 1.753a.671.671 0 01-.579-.083l-.876-4.815 7.66-5.506a.416.416 0 00-.213-.002l-9.332 5.844-.006-1.388 8.229-4.994a.671.671 0 01.686.043l2.016 1.513 4.23 3.155z"/></svg>
-      <span>Telegram</span>
-    </a>
-    {{ end }}
-    {{ with $community.github }}
-    <a href="{{ . }}" target="_blank" rel="noopener noreferrer"
-       aria-label="{{ $community.title }} on GitHub" class="inline-flex items-center text-[13px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-      <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.597 1.028 2.688 0 3.848-2.339 4.687-4.566 4.943.359.309.678.92.678 1.855 0 1.328-.01 2.419-.01 2.76 0 .267.18.578.697.482C19.135 20.197 22 16.46 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
-      <span>GitHub</span>
-    </a>
-    {{ end }}
-  </div>
-</div>
+</article>
 {{ end }}

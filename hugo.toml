@@ -27,6 +27,7 @@ description = "Software engineer in Malaysia building developer tools, structure
 footer = "Built with Hugo"
 jobTitle = "Software Engineer"
 location = "Malaysia"
+heroTitle = "Building useful systems from complex information."
 keywords = [
     "Chee Leong",
     "Software Engineer",
@@ -84,7 +85,27 @@ telegram = "https://t.me/golangmalaysia"
 
 # Projects
 [[params.projects]]
+title = "Graph20"
+kind = "Structured data"
+description = "Machine-readable reference data for the D&D 5.2.1 System Reference Document, with source-level provenance."
+url = "https://cheeleong.dev/graph20/"
+github = "https://github.com/klrkdekira/graph20"
+status = "Active"
+highlight = "Publishes 2,112 rules, classes, spells, monsters, and other entities as JSON-LD with validation schemas and a static explorer."
+tech = ["JSON-LD", "JSON Schema", "Python"]
+
+[[params.projects]]
+title = "BillWatcherNext"
+kind = "Civic technology"
+description = "A provenance-first, read-only index of Malaysian Parliament bills."
+github = "https://github.com/klrkdekira/BillWatcherNext"
+status = "Active"
+highlight = "Preserves timestamped page and document snapshots, tracks content changes, and serves a searchable server-rendered index and API."
+tech = ["Python", "FastAPI", "PostgreSQL", "JSON-LD"]
+
+[[params.projects]]
 title = "Troika! System JSON"
+kind = "Structured data"
 description = "Machine-readable JSON, JSON-LD, and validation schemas for the Troika! tabletop RPG System Reference Document."
 url = "https://cheeleong.dev/troika-system-json/"
 github = "https://github.com/klrkdekira/troika-system-json"
@@ -94,6 +115,7 @@ tech = ["JSON", "JSON Schema", "JSON-LD", "Python"]
 
 [[params.projects]]
 title = "Troika! Character Generator"
+kind = "Browser tool"
 description = "A static, browser-based character generator using live data from Troika! System JSON."
 url = "https://cheeleong.dev/troika-generator/"
 github = "https://github.com/klrkdekira/troika-generator"
@@ -103,8 +125,10 @@ tech = ["TypeScript", "React"]
 
 [[params.projects]]
 title = "Worlds Without Number System JSON"
+kind = "Structured data"
 description = "JSON schemas and data objects for Worlds Without Number based on the official System Reference Document (SRD)."
 url = "https://cheeleong.dev/wwn-system-json/"
 github = "https://github.com/klrkdekira/wwn-system-json"
 status = "Active"
+highlight = "A reusable, validated foundation for tools built around the game system."
 tech = ["JSON", "JSON Schema"]

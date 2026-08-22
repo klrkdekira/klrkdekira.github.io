@@ -1,80 +1,77 @@
 {{ define "main" }}
-<main id="main-content" class="max-w-2xl mx-auto px-6 py-16">
+<main id="main-content" class="site-shell">
+  <div class="topbar">
+    <div class="monogram">
+      <span class="monogram-mark" aria-hidden="true">CL</span>
+      <span>{{ .Site.Title }}</span>
+    </div>
+    {{ partial "theme-toggle.html" . }}
+  </div>
 
-  {{/* Cover: "A cat sitting in front of a computer monitor" by Hana Mara, Unsplash
-       https://unsplash.com/photos/a-cat-sitting-in-front-of-a-computer-monitor-KrYbarbAx5s */}}
-  <img
-    src="{{ "images/banner.jpg" | relURL }}"
-    alt="{{ .Site.Params.socialImageAlt | default "A cat sitting in front of a computer monitor" }}"
-    width="1600"
-    height="534"
-    fetchpriority="high"
-    decoding="async"
-    class="w-full h-auto rounded-lg mb-10 dark:brightness-90"
-  >
-
-  <!-- Header -->
-  <header class="mb-14">
-    <div class="flex items-start justify-between">
-      <div>
-        <h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-1">
-          {{ .Site.Title }}
-        </h1>
-        {{ if .Site.Params.description }}
-        <p class="text-sm text-gray-600 dark:text-gray-400">
-          {{ .Site.Params.description }}
-        </p>
-        {{ end }}
-      </div>
-      {{ partial "theme-toggle.html" . }}
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">
+        {{ .Site.Params.jobTitle | default "Software Engineer" }}
+        {{ with .Site.Params.location }}<span aria-hidden="true"> · </span>{{ . }}{{ end }}
+      </p>
+      <h1>{{ .Site.Params.heroTitle | default .Site.Title }}</h1>
+      {{ with .Content }}
+      <div class="hero-lede">{{ . }}</div>
+      {{ end }}
+      {{ if .Site.Params.social }}
+      <nav class="socials" aria-label="Social links">
+        {{ partial "social-links.html" . }}
+      </nav>
+      {{ end }}
     </div>
 
-    {{ with .Content }}
-    <div class="content mt-6 text-base text-gray-700 dark:text-gray-300 leading-7">
-      {{ . }}
+    {{/* Cover: "A cat sitting in front of a computer monitor" by Hana Mara, Unsplash.
+         https://unsplash.com/photos/a-cat-sitting-in-front-of-a-computer-monitor-KrYbarbAx5s */}}
+    <div class="hero-image">
+      <img
+        src="{{ "images/banner.jpg" | relURL }}"
+        alt="{{ .Site.Params.socialImageAlt | default "A cat sitting in front of a computer monitor" }}"
+        width="1600"
+        height="534"
+        fetchpriority="high"
+        decoding="async"
+      >
     </div>
-    {{ end }}
   </header>
 
-  <!-- Projects -->
   {{ if .Site.Params.projects }}
-  <section class="mb-10">
-    <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-4">
-      Projects
-    </h2>
-    <div class="space-y-3">
+  <section class="portfolio-section" aria-labelledby="projects-title">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">Selected work <span aria-hidden="true">·</span> {{ printf "%02d" (len .Site.Params.projects) }}</p>
+        <h2 id="projects-title">Projects</h2>
+      </div>
+      <p class="section-intro">Open-source projects spanning structured game data, browser tools, and public-interest information systems. Every project is presented with equal weight.</p>
+    </div>
+    <div class="project-grid">
       {{ partial "project-cards.html" . }}
     </div>
   </section>
   {{ end }}
 
-  <!-- Communities -->
   {{ if .Site.Params.communities }}
-  <section class="mb-10">
-    <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-4">
-      Communities
-    </h2>
-    <div class="space-y-3">
+  <section class="portfolio-section" aria-labelledby="communities-title">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">Community work <span aria-hidden="true">·</span> {{ printf "%02d" (len .Site.Params.communities) }}</p>
+        <h2 id="communities-title">Communities</h2>
+      </div>
+      <p class="section-intro">Spaces for Malaysian engineers and developers to connect, learn, and share what they know.</p>
+    </div>
+    <div class="community-grid">
       {{ partial "community-cards.html" . }}
     </div>
   </section>
   {{ end }}
 
-  <!-- Social links -->
-  {{ if .Site.Params.social }}
-  <section class="mb-10">
-    <div class="flex flex-wrap gap-x-4 gap-y-2">
-      {{ partial "social-links.html" . }}
-    </div>
-  </section>
-  {{ end }}
-
-  <!-- Footer -->
-  <footer class="pt-8 border-t border-gray-100 dark:border-gray-800">
-    <p class="text-xs text-gray-500 dark:text-gray-400">
-      {{ if .Site.Params.footer }}{{ .Site.Params.footer }}{{ else }}{{ now.Format "2006" }} — {{ .Site.Title }}{{ end }}
-    </p>
+  <footer class="site-footer">
+    <span>{{ .Site.Params.footer | default "Built with Hugo" }}</span>
+    <span>{{ .Site.Title }}{{ with .Site.Params.location }} <span aria-hidden="true">·</span> {{ . }}{{ end }}</span>
   </footer>
-
 </main>
 {{ end }}

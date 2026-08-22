@@ -4,8 +4,8 @@
   target="_blank"
   rel="noopener noreferrer"
   aria-label="{{ .title }}"
-  class="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+  class="social-link"
 >
-  {{ .title | default .name }}
+  {{ .title | default .name }} <span aria-hidden="true">↗</span>
 </a>
 {{ end }}

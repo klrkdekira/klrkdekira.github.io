@@ -85,33 +85,24 @@ telegram = "https://t.me/golangmalaysia"
 
 # Projects
 [[params.projects]]
-title = "Graph20"
-kind = "Structured data"
-description = "Machine-readable reference data for the D&D 5.2.1 System Reference Document, with source-level provenance."
-url = "https://cheeleong.dev/graph20/"
-github = "https://github.com/klrkdekira/graph20"
+title = "Collager"
+kind = "Browser tool"
+description = "A private, client-side editor for turning batches of photos into polished collages."
+url = "https://cheeleong.dev/collager/"
+github = "https://github.com/klrkdekira/collager"
 status = "Active"
-highlight = "Publishes 2,112 rules, classes, spells, monsters, and other entities as JSON-LD with validation schemas and a static explorer."
-tech = ["JSON-LD", "JSON Schema", "Python"]
+highlight = "Offers eight layout engines, deterministic randomization, direct crop controls, social-media presets, and high-resolution PNG or JPEG export without uploading photos."
+tech = ["JavaScript", "Canvas", "HTML", "CSS"]
 
 [[params.projects]]
-title = "BillWatcherNext"
-kind = "Civic technology"
-description = "A provenance-first, read-only index of Malaysian Parliament bills."
-github = "https://github.com/klrkdekira/BillWatcherNext"
+title = "Word Search Puzzle Generator"
+kind = "Browser tool"
+description = "A browser-based generator for creating printable word search puzzles from custom words and hints."
+url = "https://cheeleong.dev/word_search_puzzle/"
+github = "https://github.com/klrkdekira/word_search_puzzle"
 status = "Active"
-highlight = "Preserves timestamped page and document snapshots, tracks content changes, and serves a searchable server-rendered index and API."
-tech = ["Python", "FastAPI", "PostgreSQL", "JSON-LD"]
-
-[[params.projects]]
-title = "Troika! System JSON"
-kind = "Structured data"
-description = "Machine-readable JSON, JSON-LD, and validation schemas for the Troika! tabletop RPG System Reference Document."
-url = "https://cheeleong.dev/troika-system-json/"
-github = "https://github.com/klrkdekira/troika-system-json"
-status = "Active"
-highlight = "Includes an aggregated data bundle, validation schemas, and 36 character backgrounds."
-tech = ["JSON", "JSON Schema", "JSON-LD", "Python"]
+highlight = "Creates reproducible seeded puzzles with answer keys, PNG and print-ready PDF output, and shareable links—all locally in the browser."
+tech = ["JavaScript", "HTML", "CSS"]
 
 [[params.projects]]
 title = "Troika! Character Generator"
@@ -124,6 +115,46 @@ highlight = "Fetches live game data and schemas at runtime to generate character
 tech = ["TypeScript", "React"]
 
 [[params.projects]]
+title = "Graph20"
+kind = "Structured data"
+description = "Machine-readable reference data for the D&D 5.2.1 System Reference Document, with source-level provenance."
+url = "https://cheeleong.dev/graph20/"
+github = "https://github.com/klrkdekira/graph20"
+status = "Active"
+highlight = "Publishes 2,112 rules, classes, spells, monsters, and other entities as JSON-LD with validation schemas and a static explorer."
+tech = ["JSON-LD", "JSON Schema", "Python"]
+
+[[params.projects]]
+title = "Blades in the Dark System JSON"
+kind = "Structured data"
+description = "A source-faithful, machine-readable edition of the Blades in the Dark System Reference Document."
+url = "https://cheeleong.dev/fitd-system-json/"
+github = "https://github.com/klrkdekira/fitd-system-json"
+status = "Active"
+highlight = "Publishes modular JSON-LD records, searchable indexes, validation schemas, and line-level provenance back to the authoritative source."
+tech = ["JSON-LD", "JSON Schema", "Python"]
+
+[[params.projects]]
+title = "Basic Roleplaying System JSON"
+kind = "Structured data"
+description = "A source-faithful, machine-readable edition of Chaosium's Basic Roleplaying System Reference Document."
+url = "https://cheeleong.dev/brp-system-json/"
+github = "https://github.com/klrkdekira/brp-system-json"
+status = "Active"
+highlight = "Turns the SRD into modular JSON-LD records with typed data, validation schemas, search indexes, and source-level provenance."
+tech = ["JSON-LD", "JSON Schema", "Python"]
+
+[[params.projects]]
+title = "Troika! System JSON"
+kind = "Structured data"
+description = "Machine-readable JSON, JSON-LD, and validation schemas for the Troika! tabletop RPG System Reference Document."
+url = "https://cheeleong.dev/troika-system-json/"
+github = "https://github.com/klrkdekira/troika-system-json"
+status = "Active"
+highlight = "Includes an aggregated data bundle, validation schemas, and 36 character backgrounds."
+tech = ["JSON", "JSON Schema", "JSON-LD", "Python"]
+
+[[params.projects]]
 title = "Worlds Without Number System JSON"
 kind = "Structured data"
 description = "JSON schemas and data objects for Worlds Without Number based on the official System Reference Document (SRD)."
@@ -132,3 +163,12 @@ github = "https://github.com/klrkdekira/wwn-system-json"
 status = "Active"
 highlight = "A reusable, validated foundation for tools built around the game system."
 tech = ["JSON", "JSON Schema"]
+
+[[params.projects]]
+title = "BillWatcherNext"
+kind = "Civic technology"
+description = "A provenance-first, read-only index of Malaysian Parliament bills."
+github = "https://github.com/klrkdekira/BillWatcherNext"
+status = "Active"
+highlight = "Preserves timestamped page and document snapshots, tracks content changes, and serves a searchable server-rendered index and API."
+tech = ["Python", "FastAPI", "PostgreSQL", "JSON-LD"]

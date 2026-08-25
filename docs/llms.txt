@@ -7,11 +7,15 @@ I build developer tools, structured data, and technical communities. These pract
 
 ## Projects
 
-- [Graph20](https://cheeleong.dev/graph20/): Machine-readable reference data for the D&D 5.2.1 System Reference Document, with source-level provenance. — [Source](https://github.com/klrkdekira/graph20)
-- [BillWatcherNext](<no value>): A provenance-first, read-only index of Malaysian Parliament bills. — [Source](https://github.com/klrkdekira/BillWatcherNext)
-- [Troika! System JSON](https://cheeleong.dev/troika-system-json/): Machine-readable JSON, JSON-LD, and validation schemas for the Troika! tabletop RPG System Reference Document. — [Source](https://github.com/klrkdekira/troika-system-json)
+- [Collager](https://cheeleong.dev/collager/): A private, client-side editor for turning batches of photos into polished collages. — [Source](https://github.com/klrkdekira/collager)
+- [Word Search Puzzle Generator](https://cheeleong.dev/word_search_puzzle/): A browser-based generator for creating printable word search puzzles from custom words and hints. — [Source](https://github.com/klrkdekira/word_search_puzzle)
 - [Troika! Character Generator](https://cheeleong.dev/troika-generator/): A static, browser-based character generator using live data from Troika! System JSON. — [Source](https://github.com/klrkdekira/troika-generator)
+- [Graph20](https://cheeleong.dev/graph20/): Machine-readable reference data for the D&D 5.2.1 System Reference Document, with source-level provenance. — [Source](https://github.com/klrkdekira/graph20)
+- [Blades in the Dark System JSON](https://cheeleong.dev/fitd-system-json/): A source-faithful, machine-readable edition of the Blades in the Dark System Reference Document. — [Source](https://github.com/klrkdekira/fitd-system-json)
+- [Basic Roleplaying System JSON](https://cheeleong.dev/brp-system-json/): A source-faithful, machine-readable edition of Chaosium's Basic Roleplaying System Reference Document. — [Source](https://github.com/klrkdekira/brp-system-json)
+- [Troika! System JSON](https://cheeleong.dev/troika-system-json/): Machine-readable JSON, JSON-LD, and validation schemas for the Troika! tabletop RPG System Reference Document. — [Source](https://github.com/klrkdekira/troika-system-json)
 - [Worlds Without Number System JSON](https://cheeleong.dev/wwn-system-json/): JSON schemas and data objects for Worlds Without Number based on the official System Reference Document (SRD). — [Source](https://github.com/klrkdekira/wwn-system-json)
+- [BillWatcherNext](<no value>): A provenance-first, read-only index of Malaysian Parliament bills. — [Source](https://github.com/klrkdekira/BillWatcherNext)
 
 ## Communities
 

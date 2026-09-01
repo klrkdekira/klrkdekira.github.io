@@ -11,7 +11,7 @@
     {{- end -}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ if .IsHome }}{{ .Site.Title }} – {{ $jobTitle }}{{ with .Site.Params.location }} in {{ . }}{{ end }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }} · {{ $jobTitle }}{{ with .Site.Params.location }} in {{ . }}{{ end }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 
     {{ if .Description }}
     <meta name="description" content="{{ .Description }}">
@@ -35,7 +35,7 @@
     {{- end -}}
     {{- end -}}
     {{- else -}}
-    <meta property="og:title" content="{{ .Site.Title }} – {{ $jobTitle }}{{ with .Site.Params.location }} in {{ . }}{{ end }}">
+    <meta property="og:title" content="{{ .Site.Title }} · {{ $jobTitle }}{{ with .Site.Params.location }} in {{ . }}{{ end }}">
     <meta property="og:description" content="{{ .Site.Params.description }}">
     <meta property="og:type" content="website">
     {{- end -}}
@@ -52,7 +52,7 @@
     <meta property="og:image:alt" content="{{ $socialImageAlt }}">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }} – {{ $jobTitle }}{{ with .Site.Params.location }} in {{ . }}{{ end }}{{ else }}{{ .Title }}{{ end }}">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }} · {{ $jobTitle }}{{ with .Site.Params.location }} in {{ . }}{{ end }}{{ else }}{{ .Title }}{{ end }}">
     <meta name="twitter:description" content="{{ .Description | default .Site.Params.description }}">
     <meta name="twitter:image" content="{{ $socialImage | absURL }}">
     <meta name="twitter:image:alt" content="{{ $socialImageAlt }}">
@@ -90,7 +90,7 @@
     {{ if .IsHome }}
     {{- $person := dict "@type" "Person" "@id" (printf "%s#person" .Site.BaseURL) "name" $authorName "url" .Site.BaseURL "jobTitle" $jobTitle "description" .Site.Params.description "homeLocation" (dict "@type" "Place" "name" (.Site.Params.location | default "Malaysia")) "sameAs" $sameAs "knowsAbout" (slice "Software Engineering" "Developer Tools" "Structured Data" "Go" "TypeScript" "JSON Schema" "JSON-LD" "Open Source") -}}
     {{- $website := dict "@type" "WebSite" "@id" (printf "%s#website" .Site.BaseURL) "url" .Site.BaseURL "name" .Site.Title "description" .Site.Params.description "publisher" (dict "@id" (printf "%s#person" .Site.BaseURL)) "inLanguage" "en-US" -}}
-    {{- $profilePage := dict "@type" "ProfilePage" "@id" .Permalink "url" .Permalink "name" (printf "%s – %s" .Site.Title $jobTitle) "mainEntity" (dict "@id" (printf "%s#person" .Site.BaseURL)) -}}
+    {{- $profilePage := dict "@type" "ProfilePage" "@id" .Permalink "url" .Permalink "name" (printf "%s · %s" .Site.Title $jobTitle) "mainEntity" (dict "@id" (printf "%s#person" .Site.BaseURL)) -}}
     {{- $schemaData := dict "@context" "https://schema.org" "@graph" (slice $person $website $profilePage) -}}
     <script type="application/ld+json">
     {{ $schemaData | jsonify | safeJS }}

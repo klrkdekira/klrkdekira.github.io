@@ -15,7 +15,7 @@
 {{- if .Site.Params.projects }}
 ## Projects
 
-{{ range .Site.Params.projects }}- [{{ .title }}]({{ .url }}){{ with .description }}: {{ . }}{{ end }}{{ with .github }} — [Source]({{ . }}){{ end }}
+{{ range .Site.Params.projects }}{{ $title := .title }}- {{ with .url }}[{{ $title }}]({{ . }}){{ else }}{{ $title }}{{ end }}{{ with .description }}: {{ . }}{{ end }}{{ with .github }} [Source]({{ . }}){{ end }}
 {{ end }}
 {{- end -}}
 {{- if .Site.Params.communities }}
